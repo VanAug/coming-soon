@@ -2,464 +2,439 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wayapay — A New Chapter is Coming</title>
-  <meta name="description" content="Wayapay is working on the next chapter of the company to deliver innovative solutions and strong financial solutions." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#001435" />
+  <meta name="description" content="A new chapter is coming. Wayapay is working on the next chapter of the company." />
+  <title>Wayapay — A New Chapter is Coming</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #001435;
-      --navy-2: #003087;
-      --blue: #0070e0;
-      --blue-2: #009cde;
-      --cyan: #6bdcff;
-      --white: #ffffff;
-      --muted: rgba(255, 255, 255, 0.72);
-      --soft: rgba(255, 255, 255, 0.12);
-      --line: rgba(255, 255, 255, 0.16);
+    :root{
+      --bg:#001435;
+      --bg2:#00246f;
+      --blue:#0070e0;
+      --blue2:#009cde;
+      --sky:#7ddcff;
+      --white:#fff;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --faint:rgba(255,255,255,.10);
+      --line:rgba(255,255,255,.16);
+      --shadow:0 30px 90px rgba(0,0,0,.32);
+      --radius:34px;
     }
 
-    * { box-sizing: border-box; }
-
-    html, body { margin: 0; min-height: 100%; }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--white);
+      background:var(--bg);
+      min-height:100svh;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:geometricPrecision;
     }
 
-    .page {
-      min-height: 100vh;
-      position: relative;
-      isolation: isolate;
+    a{color:inherit}
+
+    .page{
+      min-height:100svh;
+      position:relative;
+      isolation:isolate;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
       background:
-        radial-gradient(circle at 78% 22%, rgba(0, 156, 222, 0.42), transparent 27%),
-        radial-gradient(circle at 68% 76%, rgba(0, 112, 224, 0.25), transparent 28%),
-        linear-gradient(135deg, #001435 0%, #001b47 45%, #003087 100%);
-      display: flex;
-      flex-direction: column;
+        radial-gradient(circle at 85% 12%, rgba(0,156,222,.55), transparent 22rem),
+        radial-gradient(circle at 78% 66%, rgba(0,112,224,.34), transparent 28rem),
+        radial-gradient(circle at 0% 100%, rgba(125,220,255,.18), transparent 25rem),
+        linear-gradient(135deg,#000b22 0%,#001435 40%,#002a72 100%);
     }
 
-    .page::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .page::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-4;
+      opacity:.36;
       background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(circle at 68% 45%, black, transparent 72%);
-      z-index: -3;
+        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+      background-size:72px 72px;
+      mask-image:linear-gradient(130deg,transparent 0%,black 22%,black 72%,transparent 100%);
     }
 
-    .glow {
-      position: absolute;
-      width: min(58vw, 740px);
-      aspect-ratio: 1;
-      right: -12vw;
-      top: 8vh;
-      border-radius: 50%;
+    .aurora{
+      position:absolute;
+      inset:auto -16rem -14rem auto;
+      width:min(78rem,115vw);
+      height:min(78rem,115vw);
+      border-radius:50%;
+      z-index:-3;
       background:
-        radial-gradient(circle at 35% 35%, rgba(255,255,255,0.85), rgba(107,220,255,0.45) 12%, rgba(0,112,224,0.28) 38%, transparent 68%),
-        conic-gradient(from 215deg, transparent 0 38%, rgba(255,255,255,0.95), rgba(0,156,222,0.85), transparent 61% 100%);
-      filter: blur(0.2px);
-      opacity: 0.86;
-      z-index: -2;
-      animation: breathe 8s ease-in-out infinite;
+        conic-gradient(from 218deg,transparent 0 38%,rgba(255,255,255,.92),rgba(125,220,255,.72),rgba(0,112,224,.52),transparent 65% 100%),
+        radial-gradient(circle at 42% 42%,rgba(255,255,255,.72),rgba(125,220,255,.34) 14%,rgba(0,112,224,.18) 42%,transparent 70%);
+      filter:blur(.5px);
+      opacity:.9;
+      transform:rotate(-8deg);
+      animation:float 9s ease-in-out infinite;
     }
 
-    .ribbon {
-      position: absolute;
-      right: -20vw;
-      bottom: 12vh;
-      width: 86vw;
-      height: 40vh;
+    .beam{
+      position:absolute;
+      right:-18vw;
+      top:18svh;
+      width:92vw;
+      height:42svh;
+      z-index:-2;
+      transform:rotate(-22deg) skewX(-12deg);
+      border-radius:999px;
       background:
-        linear-gradient(110deg, transparent 0%, rgba(107,220,255,0.08) 24%, rgba(255,255,255,0.75) 48%, rgba(0,112,224,0.35) 62%, transparent 76%),
-        linear-gradient(115deg, transparent 20%, rgba(0,156,222,0.35), transparent 54%);
-      transform: rotate(-20deg) skewX(-10deg);
-      filter: blur(1px);
-      opacity: 0.8;
-      z-index: -1;
-      border-radius: 999px;
+        linear-gradient(100deg,transparent 8%,rgba(0,112,224,.05) 23%,rgba(125,220,255,.22) 39%,rgba(255,255,255,.76) 49%,rgba(0,156,222,.44) 61%,transparent 76%),
+        linear-gradient(115deg,transparent 20%,rgba(0,112,224,.42),transparent 62%);
+      filter:blur(1px);
+      opacity:.9;
     }
 
-    .orb-line {
-      position: absolute;
-      right: -8vw;
-      top: 6vh;
-      width: min(56vw, 700px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.24);
-      box-shadow: inset 18px 0 42px rgba(255,255,255,0.12), -10px 0 38px rgba(107,220,255,0.45);
-      z-index: -1;
+    .noise{
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
     }
 
-    header {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 34px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .container{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+
+    header{
+      padding:clamp(22px,4vw,38px) 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 850;
-      letter-spacing: -0.045em;
-      font-size: clamp(24px, 3vw, 34px);
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      font-weight:900;
+      letter-spacing:-.055em;
+      font-size:clamp(1.55rem,4.5vw,2.15rem);
+      line-height:1;
     }
 
-    .mark {
-      width: 48px;
-      height: 40px;
-      position: relative;
-      display: inline-block;
+    .mark{
+      width:clamp(42px,10vw,56px);
+      height:clamp(34px,8vw,44px);
+      position:relative;
+      flex:0 0 auto;
+      filter:drop-shadow(0 13px 28px rgba(0,112,224,.42));
+    }
+    .mark i{
+      position:absolute;
+      top:4px;
+      width:38%;
+      height:78%;
+      border-radius:999px;
+      transform:rotate(-28deg);
+      background:linear-gradient(180deg,#00a8ff,#0070e0 55%,#003087);
+    }
+    .mark i:nth-child(1){left:0}
+    .mark i:nth-child(2){left:31%;background:linear-gradient(180deg,#8ee7ff,#0070e0 62%,#003087)}
+    .mark i:nth-child(3){left:60%;background:linear-gradient(180deg,#fff,#9be8ff 38%,#0070e0)}
+
+    .top-link{
+      min-height:46px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.55rem;
+      padding:.78rem 1rem;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      backdrop-filter:blur(20px);
+      text-decoration:none;
+      font-weight:750;
+      color:rgba(255,255,255,.88);
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+    .top-link:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);border-color:rgba(125,220,255,.42)}
+
+    main.container{
+      flex:1;
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);
+      align-items:center;
+      gap:clamp(2rem,6vw,5rem);
+      padding:clamp(1.4rem,4vw,4.5rem) 0 clamp(2.3rem,6vw,5.5rem);
     }
 
-    .mark span {
-      position: absolute;
-      top: 4px;
-      width: 18px;
-      height: 32px;
-      border-radius: 11px;
-      transform: rotate(-28deg);
-      background: linear-gradient(180deg, #009cde, #0070e0 55%, #003087);
-      box-shadow: 0 10px 30px rgba(0, 112, 224, 0.45);
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.7rem;
+      margin-bottom:clamp(1.1rem,2.5vw,1.7rem);
+      color:var(--sky);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:900;
+      font-size:.76rem;
+    }
+    .eyebrow::before{content:"";width:.58rem;height:.58rem;border-radius:50%;background:var(--sky);box-shadow:0 0 30px var(--sky)}
+
+    h1{
+      margin:0;
+      max-width:780px;
+      font-size:clamp(4.35rem,12.2vw,8.9rem);
+      line-height:.86;
+      letter-spacing:-.095em;
+      font-weight:900;
+      text-wrap:balance;
+    }
+    .blue-text{
+      display:block;
+      background:linear-gradient(90deg,#fff 0%,#88e4ff 30%,#008dff 72%,#fff 124%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
-    .mark span:nth-child(1) { left: 1px; }
-    .mark span:nth-child(2) { left: 16px; background: linear-gradient(180deg, #6bdcff, #0070e0 62%, #001f6b); }
-    .mark span:nth-child(3) { left: 30px; background: linear-gradient(180deg, #ffffff, #8fdfff 38%, #0070e0); opacity: 0.95; }
+    .copy{
+      max-width:620px;
+      margin:clamp(1.55rem,3.5vw,2.25rem) 0 0;
+      color:var(--muted);
+      font-size:clamp(1.05rem,2.1vw,1.38rem);
+      line-height:1.58;
+      letter-spacing:-.025em;
+    }
+    .copy strong{color:var(--white);font-weight:750}
 
-    .contact-top {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-weight: 650;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.055);
-      transition: transform .25s ease, background .25s ease, border-color .25s ease;
+    .actions{
+      margin-top:clamp(1.55rem,3.5vw,2.4rem);
+      display:flex;
+      flex-wrap:wrap;
+      gap:.85rem;
+      align-items:center;
     }
 
-    .contact-top:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.3);
+    .mail-button{
+      min-height:60px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.8rem;
+      padding:.95rem 1.2rem;
+      border-radius:1.15rem;
+      border:1px solid rgba(125,220,255,.35);
+      background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.06));
+      box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.18);
+      color:#fff;
+      text-decoration:none;
+      font-weight:850;
+      letter-spacing:-.02em;
+      backdrop-filter:blur(22px);
+      transition:.25s ease;
     }
+    .mail-button:hover{transform:translateY(-3px);border-color:rgba(125,220,255,.7);background:rgba(255,255,255,.13)}
+    .mail-button span{opacity:.72;font-weight:650}
 
-    main {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
-      padding: 52px 0 70px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--cyan);
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-bottom: 24px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 28px var(--cyan);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 760px;
-      font-size: clamp(64px, 10vw, 132px);
-      line-height: 0.88;
-      letter-spacing: -0.085em;
-      font-weight: 900;
-    }
-
-    h1 .gradient {
-      display: block;
-      background: linear-gradient(90deg, #ffffff 0%, #6bdcff 32%, #0070e0 74%, #ffffff 116%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .copy {
-      max-width: 585px;
-      margin-top: 34px;
-      color: var(--muted);
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.55;
-      letter-spacing: -0.02em;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-top: 38px;
-    }
-
-    .email-card {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 62px;
-      padding: 0 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(107,220,255,0.26);
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255,255,255,.13);
-      backdrop-filter: blur(18px);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 750;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-
-    .email-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(107,220,255,0.58);
-      background: rgba(255,255,255,0.12);
-    }
-
-    .email-card svg { flex: 0 0 auto; }
-
-    .visual {
-      position: relative;
-      min-height: 570px;
-      border-radius: 42px;
-      border: 1px solid rgba(255,255,255,0.14);
+    .stage{
+      position:relative;
+      min-height:clamp(430px,56vw,650px);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.15);
+      overflow:hidden;
+      box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.18);
       background:
-        radial-gradient(circle at 50% 28%, rgba(107,220,255,0.22), transparent 24%),
-        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.035));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 32px 90px rgba(0,0,0,0.32);
-      overflow: hidden;
-      backdrop-filter: blur(18px);
+        radial-gradient(circle at 50% 22%,rgba(125,220,255,.22),transparent 18rem),
+        linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.035));
+      backdrop-filter:blur(24px);
     }
 
-    .visual::before {
-      content: "";
-      position: absolute;
-      inset: 8%;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 0 80px rgba(0,156,222,0.35), inset 0 0 80px rgba(0,112,224,0.28);
-      animation: rotate 24s linear infinite;
-    }
-
-    .visual::after {
-      content: "";
-      position: absolute;
-      width: 120%;
-      height: 56%;
-      left: -10%;
-      bottom: -22%;
-      border-radius: 50%;
+    .stage::before{
+      content:"";
+      position:absolute;
+      width:112%;
+      aspect-ratio:1;
+      left:-6%;
+      top:4%;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.2);
+      box-shadow:inset 0 0 95px rgba(0,112,224,.34),0 0 70px rgba(0,156,222,.22);
       background:
-        radial-gradient(circle, rgba(107,220,255,0.35), transparent 58%),
-        repeating-radial-gradient(circle, rgba(255,255,255,0.18) 0 1px, transparent 1px 18px);
-      opacity: .48;
+        radial-gradient(circle at 50% 50%,transparent 0 54%,rgba(125,220,255,.16) 55%,transparent 56%),
+        repeating-radial-gradient(circle,rgba(255,255,255,.18) 0 1px,transparent 1px 34px);
+      opacity:.68;
+      animation:slowRotate 28s linear infinite;
     }
 
-    .floating-card {
-      position: absolute;
-      left: 38px;
-      right: 38px;
-      bottom: 38px;
-      padding: 26px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(0, 20, 53, 0.58);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.28);
-      backdrop-filter: blur(20px);
-      z-index: 2;
+    .orbit{position:absolute;inset:0;z-index:1}
+    .dot{position:absolute;width:.72rem;height:.72rem;border-radius:50%;background:var(--sky);box-shadow:0 0 28px var(--sky)}
+    .dot:nth-child(1){top:20%;left:27%}.dot:nth-child(2){top:36%;right:19%}.dot:nth-child(3){bottom:36%;left:42%}.dot:nth-child(4){bottom:24%;right:31%}
+
+    .glass-card{
+      position:absolute;
+      left:clamp(1rem,4vw,2rem);
+      right:clamp(1rem,4vw,2rem);
+      bottom:clamp(1rem,4vw,2rem);
+      z-index:2;
+      padding:clamp(1.15rem,3.6vw,1.7rem);
+      border:1px solid rgba(255,255,255,.17);
+      border-radius:clamp(1.35rem,4vw,1.8rem);
+      background:rgba(0,20,53,.62);
+      box-shadow:0 24px 70px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14);
+      backdrop-filter:blur(24px);
+    }
+    .glass-card h2{margin:0 0 .55rem;font-size:clamp(1.3rem,3.6vw,1.65rem);letter-spacing:-.055em;line-height:1.08}
+    .glass-card p{margin:0;color:var(--muted);line-height:1.55;font-size:clamp(.93rem,2.4vw,1rem)}
+
+    .value-strip{
+      width:min(1180px,calc(100% - 48px));
+      margin:0 auto clamp(1.45rem,3vw,2.15rem);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      border:1px solid var(--line);
+      border-radius:1.6rem;
+      overflow:hidden;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(20px);
+      box-shadow:0 24px 70px rgba(0,0,0,.18);
+    }
+    .value{padding:1.35rem 1.25rem;background:rgba(0,20,53,.32)}
+    .value svg{display:block;margin-bottom:.75rem;color:var(--sky)}
+    .value strong{display:block;margin-bottom:.35rem;font-size:1rem;letter-spacing:-.035em}
+    .value span{display:block;color:var(--muted);font-size:.86rem;line-height:1.42}
+
+    footer.container{
+      padding:0 0 calc(1.4rem + env(safe-area-inset-bottom));
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      color:rgba(255,255,255,.58);
+      font-size:.9rem;
+    }
+    footer a{text-decoration:none;color:rgba(255,255,255,.75)}
+
+    @keyframes float{0%,100%{transform:translate3d(0,0,0) rotate(-8deg);opacity:.82}50%{transform:translate3d(-1.2rem,-1rem,0) rotate(-5deg);opacity:.98}}
+    @keyframes slowRotate{to{transform:rotate(360deg)}}
+
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+    @media (max-width:980px){
+      main.container{grid-template-columns:1fr;gap:2rem;align-items:start}
+      .stage{min-height:420px;order:-1;margin-top:.5rem}
+      .value-strip{grid-template-columns:repeat(2,1fr)}
+      .aurora{width:105vw;height:105vw;right:-52vw;bottom:12svh;opacity:.72}
+      .beam{right:-40vw;top:15svh;width:130vw;height:36svh}
     }
 
-    .floating-card h2 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      letter-spacing: -0.04em;
+    @media (max-width:640px){
+      .container,.value-strip{width:min(100% - 28px,1180px)}
+      header{padding-top:calc(18px + env(safe-area-inset-top));padding-bottom:12px}
+      .top-link{font-size:0;min-width:46px;width:46px;padding:0;border-radius:50%}
+      .top-link::before{content:"@";font-size:1rem;font-weight:900;color:#fff}
+      main.container{padding-top:.7rem;padding-bottom:1.7rem;gap:1.35rem}
+      .eyebrow{font-size:.68rem;margin-bottom:.95rem}
+      h1{font-size:clamp(3.95rem,19vw,5.9rem);line-height:.86;letter-spacing:-.105em}
+      .copy{font-size:1.02rem;line-height:1.55;margin-top:1.2rem;max-width:100%}
+      .actions{margin-top:1.25rem}
+      .mail-button{width:100%;min-height:58px;border-radius:1rem;padding:.95rem 1rem;justify-content:flex-start;font-size:.95rem;overflow:hidden}
+      .mail-button span{display:none}
+      .stage{min-height:350px;border-radius:1.45rem}
+      .stage::before{width:125%;left:-12%;top:1%}
+      .dot{width:.55rem;height:.55rem}
+      .glass-card{padding:1rem;border-radius:1.2rem}
+      .value-strip{grid-template-columns:1fr;border-radius:1.25rem}
+      .value{padding:1rem 1.05rem;display:grid;grid-template-columns:auto 1fr;column-gap:.85rem;align-items:start}
+      .value svg{margin-bottom:0;margin-top:.15rem}
+      .value strong{margin-bottom:.2rem}
+      footer.container{flex-direction:column;align-items:flex-start;font-size:.82rem;padding-bottom:1.3rem}
     }
 
-    .floating-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: 15px;
-    }
-
-    .nodes {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
-    .node {
-      position: absolute;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 24px var(--cyan);
-    }
-
-    .node:nth-child(1) { left: 26%; top: 22%; }
-    .node:nth-child(2) { right: 22%; top: 34%; }
-    .node:nth-child(3) { left: 48%; top: 52%; }
-    .node:nth-child(4) { right: 34%; bottom: 32%; }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto 34px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(18px);
-    }
-
-    .metric {
-      padding: 26px;
-      background: rgba(0, 20, 53, 0.34);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 7px;
-      letter-spacing: -0.03em;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    footer {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 0 0 32px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: rgba(255,255,255,0.6);
-      font-size: 14px;
-    }
-
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: .78; }
-      50% { transform: scale(1.04); opacity: .95; }
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @media (max-width: 940px) {
-      main { grid-template-columns: 1fr; padding-top: 24px; }
-      .visual { min-height: 430px; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
-      .glow, .orb-line { width: 88vw; right: -42vw; }
-    }
-
-    @media (max-width: 620px) {
-      header { padding-top: 24px; }
-      .contact-top { display: none; }
-      h1 { font-size: clamp(56px, 18vw, 86px); }
-      .copy { font-size: 17px; }
-      .metrics { grid-template-columns: 1fr; }
-      .visual { min-height: 360px; border-radius: 30px; }
-      .floating-card { left: 18px; right: 18px; bottom: 18px; padding: 20px; border-radius: 22px; }
-      footer { flex-direction: column; }
+    @media (max-width:390px){
+      .brand{font-size:1.42rem}
+      h1{font-size:3.65rem}
+      .stage{min-height:320px}
+      .mail-button{font-size:.88rem}
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="glow" aria-hidden="true"></div>
-    <div class="orb-line" aria-hidden="true"></div>
-    <div class="ribbon" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="beam" aria-hidden="true"></div>
 
-    <header>
+    <header class="container">
       <div class="brand" aria-label="Wayapay">
-        <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span>wayapay</span>
       </div>
-      <a class="contact-top" href="mailto:hello@wayapay.com">Contact us</a>
+      <a class="top-link" href="mailto:hello@wayapay.com" aria-label="Email Wayapay">Contact us</a>
     </header>
 
-    <main>
-      <section>
+    <main class="container">
+      <section class="content" aria-labelledby="main-title">
         <div class="eyebrow">The next chapter</div>
-        <h1>A new chapter <span class="gradient">is coming.</span></h1>
+        <h1 id="main-title">A new chapter <span class="blue-text">is coming</span></h1>
         <p class="copy">
-          We’re working on the next chapter of our company to deliver innovative solutions and strong financial solutions.
+          We’re working on the next chapter of our company to deliver <strong>innovative solutions</strong> and <strong>strong financial solutions.</strong>
           <br><br>
           Thank you for your patience and support.
         </p>
-        <div class="cta-row">
-          <a class="email-card" href="mailto:hello@wayapay.com">
+        <div class="actions">
+          <a class="mail-button" href="mailto:hello@wayapay.com" aria-label="Email hello@wayapay.com">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6.5h16v11H4v-11Z" stroke="#6bdcff" stroke-width="1.8"/>
-              <path d="m4.5 7 7.5 6 7.5-6" stroke="#6bdcff" stroke-width="1.8"/>
+              <path d="M4 6.5h16v11H4v-11Z" stroke="#7ddcff" stroke-width="1.8"/>
+              <path d="m4.5 7 7.5 6 7.5-6" stroke="#7ddcff" stroke-width="1.8"/>
             </svg>
-            Email us: hello@wayapay.com
+            <span>Email us:</span> hello@wayapay.com
           </a>
         </div>
       </section>
 
-      <aside class="visual" aria-label="Abstract financial technology visual">
-        <div class="nodes" aria-hidden="true">
-          <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
+      <aside class="stage" aria-label="Abstract next generation fintech visual">
+        <div class="orbit" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
         </div>
-        <div class="floating-card">
-          <h2>Built for what comes next.</h2>
-          <p>Designing a stronger, faster and more future-ready financial experience for customers, partners and businesses.</p>
+        <div class="glass-card">
+          <h2>Building what comes next.</h2>
+          <p>A sharper, stronger and more future-ready foundation for customers, partners and businesses.</p>
         </div>
       </aside>
     </main>
 
-    <section class="metrics" aria-label="Company values">
-      <div class="metric"><strong>Innovative</strong><span>Building modern solutions for a changing financial world.</span></div>
-      <div class="metric"><strong>Secure</strong><span>Keeping trust, reliability and protection at the core.</span></div>
-      <div class="metric"><strong>Future-ready</strong><span>Preparing infrastructure for the next era of finance.</span></div>
-      <div class="metric"><strong>Customer-first</strong><span>Creating better experiences for the people we serve.</span></div>
+    <section class="value-strip" aria-label="Wayapay principles">
+      <div class="value">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 10-13h-7l1-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div><strong>Innovative</strong><span>Modern solutions for a changing financial world.</span></div>
+      </div>
+      <div class="value">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Secure</strong><span>Trust, reliability and protection at the core.</span></div>
+      </div>
+      <div class="value">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3c3 3 4.2 6 4.2 9S15 18 12 21c-3-3-4.2-6-4.2-9S9 6 12 3Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>
+        <div><strong>Future-ready</strong><span>Preparing for the next era of finance.</span></div>
+      </div>
+      <div class="value">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18c1.8-3 4.4-4.5 8-4.5S18.2 15 20 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
+        <div><strong>Customer-first</strong><span>Better experiences for the people we serve.</span></div>
+      </div>
     </section>
 
-    <footer>
+    <footer class="container">
       <span>© 2026 Wayapay. All rights reserved.</span>
-      <span>hello@wayapay.com</span>
+      <a href="mailto:hello@wayapay.com">hello@wayapay.com</a>
     </footer>
   </div>
 </body>
